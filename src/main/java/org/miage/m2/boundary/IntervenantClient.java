@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class IntervenantClient {
     @Autowired
     IntervenantRestClient restClient;
-    
+
     @HystrixCommand(fallbackMethod = "fallback")
     public Intervenant get(String id) {
         return restClient.get(id);
